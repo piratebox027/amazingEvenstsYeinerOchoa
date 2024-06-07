@@ -2,50 +2,125 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <title>Mi Página</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/styles/style.css">
+  <title>Mi Página</title>
 </head>
 
 <body>
-    <!-- Barra de Navegación -->
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">LOGO</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#miNavbar">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="miNavbar">
-              <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a class="nav-link" href="#">HOME</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">UPCOMING EVENTS</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">PAST EVENTS</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">CONTACT</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">STATS</a></li>
-              </ul>
-            </div>
-          </nav>
-    </header>
+  <!-- Barra de Navegación -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">LOGO</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#miNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="miNavbar">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="#">HOME</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">UPCOMING EVENTS</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">PAST EVENTS</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">CONTACT</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">STATS</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
 
-    <div id="miCarrusel" class="carousel slide" data-ride="carousel">
-        <!-- Ítems del carrusel aquí -->
+  <main>
+
+    <!-- carrusel -->
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="/img/optional_banner_5.jpg" class="d-block w-100" alt="Primera imagen">
+        </div>
+        <div class="carousel-item">
+          <img src="/img/music_concert.jpg" class="d-block w-100" alt="Segunda imagen">
+        </div>
+        <div class="carousel-item">
+          <img src="/img/optional_banner_3.jpg" class="d-block w-100" alt="Tercera imagen">
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Anterior</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Siguiente</span>
+      </a>
     </div>
+
 
     <!-- Sección de Imágenes -->
-    <div class="container">
-        <div class="row">
-            <!-- Tarjetas de imágenes aquí -->
+    <div class="container d-flex Flex-wrap">
+      <div class="card m-2">
+        <img src="img/books.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
+      </div>
+      <div class="card m-2">
+        <img src="img/books.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+      <div class="card m-2">
+        <img src="img/books.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+      <div class="card m-2">
+        <img src="img/books.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
     </div>
+  </main>
 
-    <!-- Enlaces de Redes Sociales -->
-    <footer class="text-center">
-        <!-- Iconos de redes sociales aquí -->
-    </footer>
+  <!-- Footer -->
+  <footer class="bg-dark text-white mt-5">
+    <div class="container py-4">
+      <div class="row justify-content-between">
+        <div class="col-md-4 mb-3">
+          <ul class="list-unstyled">
+            <img src="/img/whatsapp.png" alt="logo de wasap">
+            <img src="/img/facebook.png" alt="">
+            <img src="/img/instagram.png" alt="">
+          </ul>
+        </div>
+        <div class="text-center mt-4">
+          <p>&copy; 2024 Mi Empresa. Todos los derechos reservados.</p>
+        </div>
+      </div>
+  </footer>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 
 </html>
