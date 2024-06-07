@@ -12,7 +12,7 @@
 <body>
   <!-- Barra de Navegación -->
   <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <a class="navbar-brand" href="#">LOGO</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#miNavbar">
         <span class="navbar-toggler-icon"></span>
@@ -59,6 +59,22 @@
         <span class="sr-only">Siguiente</span>
       </a>
     </div>
+
+    <!-- Filtros -->
+  <div class="container my-4">
+    <div class="row">
+      <div class="col">
+        <label><input type="checkbox"> Category 1</label>
+        <label><input type="checkbox"> Category 2</label>
+        <label><input type="checkbox"> Category 3</label>
+        <label><input type="checkbox"> Category 4</label>
+        <label><input type="checkbox"> Category 5</label>
+      </div>
+      <div class="col text-right">
+        <input type="text" class="form-control d-inline-block" style="width: 200px;" placeholder="Search">
+      </div>
+    </div>
+  </div>
 
 
     <!-- Sección de Imágenes -->
@@ -114,7 +130,7 @@
           </ul>
         </div>
         <div class="text-center mt-4">
-          <p>&copy; 2024 Mi Empresa. Todos los derechos reservados.</p>
+          <p>&copy; 2024. Yeiner Ochoa.</p>
         </div>
       </div>
   </footer>
