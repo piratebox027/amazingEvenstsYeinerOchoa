@@ -11,17 +11,21 @@
 }
 
 .container{
-    padding: 1rem;  
+    padding: 1rem; 
+     
 }
-.card{
-    width: 20rem;
-    border: 1px solid green;
+.targe-separacion{
+    width: 90%;
+    
+
+}
+.col{
     border-radius: 1rem;
-    justify-content: space-between;
-} 
-.card img{
+    border: 1px solid #ccc;
+    padding: 0;
+}
+.col img{
     border-radius: 1rem;
-    width: 100%;
-    height: 10rem;
-    object-fit: cover;
+    height: 10rem; 
+    
 }
