@@ -41,7 +41,7 @@
       "name": "Metallica in concert",
       "date": "2024-01-22",
       "description": "The only concert of the most emblematic band in the world",
-      "category": "Music Concert",
+      "category": "Costume Party",
       "place": "Room A",
       "capacity": 138000,
       "estimate":138000,

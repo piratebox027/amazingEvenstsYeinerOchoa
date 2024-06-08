@@ -13,7 +13,7 @@
   <!-- Barra de Navegación -->
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-      <a class="navbar-brand" href="#">LOGO</a>
+      <a class="navbar-brand" href="index.html"><img src="/img/amazing_brand.png" alt="logo.png"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#miNavbar">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -32,12 +32,11 @@
   <main>
 
     <!-- carrusel -->
-
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <div id="carousel" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        <li data-target="#carouse" data-slide-to="0" class="active"></li>
+        <li data-target="#carouse" data-slide-to="1"></li>
+        <li data-target="#carousel" data-slide-to="2"></li>
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
@@ -60,59 +59,68 @@
       </a>
     </div>
 
+
     <!-- Filtros -->
-  <div class="container my-4">
-    <div class="row">
-      <div class="col">
-        <label><input type="checkbox"> Category 1</label>
-        <label><input type="checkbox"> Category 2</label>
-        <label><input type="checkbox"> Category 3</label>
-        <label><input type="checkbox"> Category 4</label>
-        <label><input type="checkbox"> Category 5</label>
-      </div>
-      <div class="col text-right">
-        <input type="text" class="form-control d-inline-block" style="width: 200px;" placeholder="Search">
+    <div class="container my-4 ">
+      <div class="row">
+        <div class="col">
+          <label><input type="checkbox"> Food Fair</label>
+          <label><input type="checkbox"> Museum</label>
+          <label><input type="checkbox"> Costume Party</label>
+          <label><input type="checkbox"> Costume Party</label>
+        </div>
+        <div class="col text-right">
+          <input type="text" class="form-control d-inline-block" style="width: 200px;" placeholder="Search">
+        </div>
       </div>
     </div>
-  </div>
 
 
     <!-- Sección de Imágenes -->
     <div class="container d-flex Flex-wrap">
       <div class="card m-2">
-        <img src="img/books.jpg" class="card-img-top" alt="...">
+        <img src="/img/food_fair.jpg" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <h5 class="card-title">Festival of the collectivities</h5>
+          <p class="card-text">Enjoy your favorite dishes from different countries in a unique event for the whole
+            family.</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <P>Pice: 5</P>
+            <a href="#" class="btn btn-primary">Details</a>
+          </div>
         </div>
       </div>
       <div class="card m-2">
-        <img src="img/books.jpg" class="card-img-top" alt="...">
+        <img src="/img/outing_to_the_museum.jpg" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <h5 class="card-title">Art Exhibition</h5>
+          <p class="card-text">Let's go to the art museum for an incredible tour to learn about the largest dinosaurs.
+            <div class="d-flex justify-content-between">
+              <P>Pice: 15</P>
+              <a href="#" class="btn btn-primary">Details</a>
+            </div>
         </div>
       </div>
       <div class="card m-2">
-        <img src="img/books.jpg" class="card-img-top" alt="...">
+        <img src="/img/costume_party.jpg" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <h5 class="card-title">Halloween Night</h5>
+          <p class="card-text">Come in your scariest costume character to win amazing prizes.</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <P>Pice: 12</P>
+            <a href="#" class="btn btn-primary">Details</a>
+          </div>
         </div>
       </div>
       <div class="card m-2">
-        <img src="img/books.jpg" class="card-img-top" alt="...">
+        <img src="/img/music_concert.jpg" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <h5 class="card-title">Metallica in concert</h5>
+          <p class="card-text">The only concert of the most emblematic band in the world.</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <P>Pice: 150</P>
+            <a href="#" class="btn btn-primary">Details</a>
+          </div>
         </div>
       </div>
     </div>
