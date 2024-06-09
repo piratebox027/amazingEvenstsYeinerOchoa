@@ -18,20 +18,21 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="miNavbar">
-                <li class="nav-item"><a class="nav-link" href="/index.html">HOME</a></li>
-                <li class="nav-item"><a class="nav-link" href="/UpcomingEvents.html">UPCOMING EVENTS</a></li>
-                <li class="nav-item"><a class="nav-link" href="/PastEvents.html">PAST EVENTS</a></li>
-                <li class="nav-item"><a class="nav-link" href="/Contact.html">CONTACT</a></li>
-                <li class="nav-item"><a class="nav-link" href="/Stats.html">STATS</a></li>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="/index.html">HOME</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/UpcomingEvents.html">UPCOMING EVENTS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/PastEvents.html">PAST EVENTS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Contact.html">CONTACT</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Stats.html">STATS</a></li>
+                </ul>
             </div>
         </nav>
     </header>
 
     <main>
         <!-- carrusel -->
-        <div id="carousel" class="carousel slide"
-         data-ride="carousel">
-         
+        <div id="carousel" class="carousel slide" data-ride="carousel">
+
             <ol class="carousel-indicators">
                 <li data-target="#carousel" data-slide-to="0" class="active"></li>
                 <li data-target="#carousel" data-slide-to="1"></li>
@@ -67,24 +68,24 @@
         </div>
 
         <!-- Filtros -->
-    <div class="container my-4">
-        <div class="d-flex justify-content-between text-center row row-cols-1">
-          <div>
-            <label><input type="checkbox"> Food Fair</label>
-            <label><input type="checkbox"> Museum</label>
-            <label><input type="checkbox"> Costume Party</label>
-            <label><input type="checkbox"> Costume Party</label>
-          </div>
-          <div class="search-box">
-            <form id="search-form">
-              <input type="text" class="form-control" placeholder="Search">
-              <button type="submit" class="bt-busqueda">
-                <img class="busqueda" src="/img/busqueda.png.png" alt="img de busqueda">
-              </button>
-            </form>
-          </div>
+        <div class="container my-4">
+            <div class="d-flex justify-content-between text-center row row-cols-1">
+                <div>
+                    <label><input type="checkbox"> Food Fair</label>
+                    <label><input type="checkbox"> Museum</label>
+                    <label><input type="checkbox"> Costume Party</label>
+                    <label><input type="checkbox"> Costume Party</label>
+                </div>
+                <div class="search-box">
+                    <form id="search-form">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <button type="submit" class="bt-busqueda">
+                            <img class="busqueda" src="/img/busqueda.png.png" alt="img de busqueda">
+                        </button>
+                    </form>
+                </div>
+            </div>
         </div>
-      </div>
 
         <!-- Sección de tabla -->
         <div class="datos-tabla container-fluid mx-auto table-responsive">
