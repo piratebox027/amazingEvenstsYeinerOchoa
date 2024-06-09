@@ -1,4 +1,6 @@
-
+body{
+    background-color: #DDE6ED;
+}
 .navbar-brand img {
     width: 30%;
 }
@@ -14,9 +16,7 @@
 .targe-separacion {
     width: 90%;
 }
-.text-right {
-    margin-left: 3.5rem;
-}
+
 .col {
     border-radius: 1rem;
     border: 1px solid #ccc;
@@ -57,3 +57,27 @@
         width: 100%;
     }
 } 
+
+/* estilos para el icono de busqueda */
+.search-box {
+    margin-left: 3.5rem;
+    position: relative;   
+}
+.search-box input {
+    padding-left: 2.5rem; /* Ajusta según el tamaño de tu imagen */
+}
+.busqueda {
+    position: absolute;
+    left: 10px; 
+    transform: translateY(-50%);
+    width: 20px; /* Ajusta el tamaño de la imagen */
+    height: 20px; /* Ajusta el tamaño de la imagen */
+}
+.bt-busqueda{
+    border: none;
+    position: absolute;
+    left: 1px;
+    top: 4%;
+    width: 16%; /* el ancho del cotenedor del boton */
+    height: 34px; /* el alto del cotenedor del boton */
+}
