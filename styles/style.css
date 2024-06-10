@@ -27,6 +27,7 @@ body {
 .formularioPuqueño{
     margin-top: 3rem;
     width: 70%;
+    height: auto;
 }
 /*stylos card informacion*/
 .informacion {
