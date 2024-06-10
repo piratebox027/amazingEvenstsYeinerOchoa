@@ -143,4 +143,3 @@
   "assistance": 12000,
   "price": 25
 }
-  ]

@@ -1,83 +1,63 @@
-body{
+body {
     background-color: #DDE6ED;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    /* Evita el scroll horizontal */
 }
+/*stylos de nav*/
 .navbar-brand img {
     width: 30%;
 }
-.carousel-inner {
-    width: 100%;
-    height: 20rem;
-}
-.carousel-inner img {
-    width: 100%;
+.carousel-item img {
+    text-decoration: none;
     height: 20rem;
     object-fit: cover;
 }
-.targe-separacion {
-    width: 90%;
-}
 
-.col {
-    border-radius: 1rem;
-    border: 1px solid #ccc;
-    padding: 0;
+/* Estilos para las tarjetas */
+.miCard {
+    width: 95%;
 }
-.col img {
-    border-radius: 1rem;
+.card img {
     height: 10rem;
+    object-fit: cover;
 }
-.formulario {
-    width: 20rem;
-    margin-top: 2rem; 
+/* stylos de cuntact*/
+.formularioPuqueño{
+    margin-top: 3rem;
+    width: 70%;
 }
-.iformacion {
+/*stylos card informacion*/
+.informacion {
     border: solid 1px green;
     width: 70%;
     margin-top: 8rem;
 }
 
-.iformacionPrueba img {
+.informacionPrueba img {
     height: 100%;
     object-fit: cover;
 }
+
 /* Path: styles/style.css */
 .datos-tabla {
-    margin: 0;
+   margin-top: 5rem;
     padding: 0;
     width: 95%;
 }
-.table-border-black th, td {
-    border-color: black ;
-}
-.table thead th {
-    border-bottom: 1px solid black;
-}
-@media screen and (max-width: 600px){
-    .datos-tabla {
-        width: 100%;
-    }
-} 
 
 /* estilos para el icono de busqueda */
-.search-box {
-    margin-left: 3.5rem;
-    position: relative;   
-}
-.search-box input {
-    padding-left: 2.5rem; /* Ajusta según el tamaño de tu imagen */
-}
 .busqueda {
     position: absolute;
-    left: 10px; 
+    left: 0px;
     transform: translateY(-50%);
-    width: 20px; /* Ajusta el tamaño de la imagen */
-    height: 20px; /* Ajusta el tamaño de la imagen */
+    width: 25px;
+    /* Ajusta el tamaño de la imagen */
+    height: 29px;
+    /* Ajusta el tamaño de la imagen */
 }
-.bt-busqueda{
+.input-group .btn {
     border: none;
-    position: absolute;
-    left: 1px;
-    top: 4%;
-    width: 16%; /* el ancho del cotenedor del boton */
-    height: 34px; /* el alto del cotenedor del boton */
+    background-color: hsla(0, 0%, 95%, 0.993);
 }
