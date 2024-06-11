@@ -1,9 +1,19 @@
+
 body {
     background-color: #DDE6ED;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
     /* Evita el scroll horizontal */
+    height: 100%;
+}
+.sombra{
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.44);
+-moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.44);
+box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.44);
+margin-top: 3rem;
+padding: 2rem;
+border-radius: 1rem;
 }
 /*stylos de nav*/
 .navbar-brand img {
@@ -14,6 +24,9 @@ body {
     height: 20rem;
     object-fit: cover;
 }
+.miCol{
+    height: 100%;
+}
 
 /* Estilos para las tarjetas */
 .miCard {
@@ -22,12 +35,6 @@ body {
 .card img {
     height: 10rem;
     object-fit: cover;
-}
-/* stylos de cuntact*/
-.formularioPuqueño{
-    margin-top: 3rem;
-    width: 70%;
-    height: auto;
 }
 /*stylos card informacion*/
 .informacion {
