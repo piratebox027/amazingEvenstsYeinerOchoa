@@ -195,7 +195,7 @@ const data = {
     ],
   };
 
-  function crearTargetas(eventos) {
+  function crearTarjetas(eventos) {
     let contenedor = document.getElementById("tarjetasDinamicas");
     
     for (let i = 0; i < eventos.length; i++) {
@@ -220,5 +220,5 @@ const data = {
   }
   
   // Llama a la función y pasa el array de eventos
-  crearTargetas(data.events);
+  crearTarjetas(data.events);
   
