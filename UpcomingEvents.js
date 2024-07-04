@@ -195,15 +195,14 @@ const data = {
     ],
   };
 
-  function crearTargetas(eventos) {
-    let contenedor = document.getElementById("targetasDinamicas");
+  function crearTarjetas(eventos) {
+    let contenedor = document.getElementById("tarjetasDinamicas");
     let fechaCorte = new Date("2023-01-01");
-    
-    // Filtrar los eventos cuya fecha sea mayor a la fecha de corte
-    let eventosFiltrados = eventos.filter(evento => new Date(evento.date) > fechaCorte);
-    
-    eventosFiltrados.forEach(evento => {
-      let tarjeta = document.createElement('div');
+      
+    for (let i = 0; i < eventos.length; i++) {
+      let evento = eventos[i];
+      if (new Date(evento.date) > fechaCorte) {
+        let tarjeta = document.createElement('div');
       tarjeta.className = "col-md-3 mb-4";  // Cada tarjeta ocupa 1/4 del ancho de la fila
       tarjeta.innerHTML = `
         <div class="card h-100">
@@ -219,8 +218,11 @@ const data = {
         </div>`;
       
       contenedor.appendChild(tarjeta);
-    });
+     }
+   
+   }
+  
   }
   
   // Llama a la función y pasa el array de eventos
-  crearTargetas(data.events);
+  crearTarjetas(data.events);

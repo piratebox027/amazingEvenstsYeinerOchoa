@@ -195,58 +195,30 @@ const data = {
     ],
   };
 
-
-
-
-// data.currentDate
-
-// data.events
-
-// data.events[0].name
-
-// function crearTargetas(eventos){
-//  let contenedor = document.getElementById("targetasDinamicas")
- 
-//  let tarjeta = document.createElement('div')
-//  let.className = "miCard"
-//  tarjeta.innerHTML = `<div class="col">
-//         <div class="card h-100">
-//             <img src=${eventos.image} alt="Festival of the collectivities">
-//             <div class="card-body d-flex flex-column justify-content-end">
-//               <h5 class="card-title">${eventos.name}</h5>
-//               <p class="card-text">${eventos.description}</p>
-//               <div class="d-flex justify-content-between align-items-center">
-//                 <p>Price:${eventos.price}</p>
-//                 <a href="./Details.html" class="btn btn-primary">Details</a>
-//               </div>
-//             </div>
-//         </div>
-//     </div>`
-// }
-
-function crearTargetas(eventos) {
-  let contenedor = document.getElementById("targetasDinamicas");
-  
-  eventos.forEach(evento => {
-    let tarjeta = document.createElement('div');
-    tarjeta.className = "col-md-3 mb-4";  // Cada tarjeta ocupa 1/4 del ancho de la fila
-    tarjeta.innerHTML = `
-      <div class="card h-100">
-        <img src=${evento.image} alt="Festival of the collectivities" class="card-img-top">
-        <div class="card-body d-flex flex-column justify-content-end">
-          <h5 class="card-title">${evento.name}</h5>
-          <p class="card-text">${evento.description}</p>
-          <div class="d-flex justify-content-between align-items-center">
-            <p>Price: ${evento.price}</p>
-            <a href="./Details.html" class="btn btn-primary">Details</a>
-          </div>
-        </div>
-      </div>`;
+  function crearTargetas(eventos) {
+    let contenedor = document.getElementById("tarjetasDinamicas");
     
-    contenedor.appendChild(tarjeta);
-  });
-}
-
-// Llama a la función y pasa el array de eventos
-crearTargetas(data.events);
-
+    for (let i = 0; i < eventos.length; i++) {
+      let evento = eventos[i];
+      let tarjeta = document.createElement('div');
+      tarjeta.className = "col-md-3 mb-4";  // Cada tarjeta ocupa 1/4 del ancho de la fila
+      tarjeta.innerHTML = `
+        <div class="card h-100">
+          <img src=${evento.image} alt="Festival of the collectivities" class="card-img-top">
+          <div class="card-body d-flex flex-column justify-content-end">
+            <h5 class="card-title">${evento.name}</h5>
+            <p class="card-text">${evento.description}</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <p>Price: ${evento.price}</p>
+              <a href="./Details.html" class="btn btn-primary">Details</a>
+            </div>
+          </div>
+        </div>`;
+      
+      contenedor.appendChild(tarjeta);
+    }
+  }
+  
+  // Llama a la función y pasa el array de eventos
+  crearTargetas(data.events);
+  
