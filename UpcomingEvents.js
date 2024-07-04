@@ -199,7 +199,7 @@ const data = {
     let contenedor = document.getElementById("targetasDinamicas");
     let fechaCorte = new Date("2023-01-01");
     
-    // Filtrar los eventos cuya fecha sea menor a la fecha de corte
+    // Filtrar los eventos cuya fecha sea mayor a la fecha de corte
     let eventosFiltrados = eventos.filter(evento => new Date(evento.date) > fechaCorte);
     
     eventosFiltrados.forEach(evento => {
