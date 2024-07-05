@@ -203,7 +203,7 @@ function crearTarjetas(eventos) {
       let evento = eventos[i];
       if (new Date(evento.date) < fechaCorte) {
         let tarjeta = document.createElement('div');
-      tarjeta.className = "col-md-3 mb-4";  // Cada tarjeta ocupa 1/4 del ancho de la fila
+      tarjeta.className = "col-12 col-md-6 col-lg-3 mb-4";  // Cada tarjeta ocupa 1/4 del ancho de la fila
       tarjeta.innerHTML = `
         <div class="card h-100">
           <img src=${evento.image} alt="Festival of the collectivities" class="card-img-top">
