@@ -222,7 +222,7 @@ function crearTarjetas(eventos, terminoBusqueda) {
     mensajeNoResultados.style.display = 'none';  // Oculta el mensaje de no resultados
     
     eventos.forEach(evento => {
-      if (new Date(evento.date) < fechaCorte) {
+      if (new Date(evento.date) > fechaCorte) {
         let tarjeta = document.createElement('div');
         tarjeta.className = "col-12 col-md-6 col-lg-3 mb-4";
         tarjeta.innerHTML = `

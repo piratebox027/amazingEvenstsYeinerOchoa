@@ -1,15 +1,18 @@
-body,
-html {
+
+body, html {
     background-color: #DDE6ED;
     overflow-x: hidden;
-    /* Evita el scroll horizontal */
+    margin: 0;
+    padding: 0;
     height: 100%;
-}
-
+  }
 .miMaim {
     padding-top: 7rem;
     /* Ajusta este valor según la altura de tu header */
     min-height: 45rem;
+}
+.miMaim2{
+    padding-top: 8%;
 }
 
 .sombra {
@@ -65,6 +68,3 @@ html {
 }
 
 
-#event-card {
-    height: 90%;
-}
