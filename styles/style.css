@@ -63,3 +63,8 @@ html {
     border: none;
     background-color: hsla(0, 0%, 95%, 0.993);
 }
+
+
+#event-card {
+    height: 90%;
+}

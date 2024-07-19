@@ -1,4 +1,5 @@
-const data = {
+
+  const data = {
     currentDate: "2023-01-01",
     events: [
       {
@@ -192,38 +193,84 @@ const data = {
         price: 250,
         __v: 0,
       },
-    ],
+    ]
   };
+  
+// Generar checkboxes de categorías dinámicamente
+function generarFiltrosCategorias() {
+  const categoriasUnicas = [...new Set(data.events.map(evento => evento.category))];
+  const contenedorFiltros = document.getElementById("filtros-categorias");
 
-function crearTarjetas(eventos) {
-    let contenedor = document.getElementById("tarjetasDinamicas");
-    let fechaCorte = new Date("2023-01-01");
-      
-    for (let i = 0; i < eventos.length; i++) {
-      let evento = eventos[i];
+  categoriasUnicas.forEach(categoria => {
+    const label = document.createElement('label');
+    label.className = "form-check-label";
+    label.innerHTML = `
+      <input type="checkbox" class="form-check-input" value="${categoria}"> ${categoria}
+    `;
+    contenedorFiltros.appendChild(label);
+  });
+}
+
+function crearTarjetas(eventos, terminoBusqueda) {
+  let contenedor = document.getElementById("tarjetasDinamicas");
+  const mensajeNoResultados = document.getElementById("mensaje-no-resultados");
+  let fechaCorte = new Date("2023-01-01");
+
+  // Limpiar el contenedor solo si hay nuevos eventos para mostrar
+  if (eventos.length > 0) {
+    contenedor.innerHTML = '';  // Limpia el contenedor antes de añadir nuevas tarjetas
+    mensajeNoResultados.style.display = 'none';  // Oculta el mensaje de no resultados
+    
+    eventos.forEach(evento => {
       if (new Date(evento.date) < fechaCorte) {
         let tarjeta = document.createElement('div');
-      tarjeta.className = "col-12 col-md-6 col-lg-3 mb-4";  // Cada tarjeta ocupa 1/4 del ancho de la fila
-      tarjeta.innerHTML = `
-        <div class="card h-100">
-          <img src=${evento.image} alt="Festival of the collectivities" class="card-img-top">
-          <div class="card-body d-flex flex-column justify-content-end">
-            <h5 class="card-title">${evento.name}</h5>
-            <p class="card-text">${evento.description}</p>
-            <div class="d-flex justify-content-between align-items-center">
-              <p>Price: ${evento.price}</p>
-              <a href="./Details.html" class="btn btn-primary">Details</a>
+        tarjeta.className = "col-12 col-md-6 col-lg-3 mb-4";
+        tarjeta.innerHTML = `
+          <div class="card h-100">
+            <img src="${evento.image}" alt="${evento.name}" class="card-img-top">
+            <div class="card-body d-flex flex-column justify-content-end">
+              <h5 class="card-title">${evento.name}</h5>
+              <p class="card-text">${evento.description}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <p>Price: ${evento.price}</p>
+                <a href="Details.html?id=${evento._id}" class="btn btn-primary">Details</a>
+              </div>
             </div>
-          </div>
-        </div>`;
-      
-      contenedor.appendChild(tarjeta);
-     }
-   
-   }
-  
+          </div>`;
+        contenedor.appendChild(tarjeta);
+      }
+    });
+  } else {
+    // Si no hay eventos, muestra el mensaje de no resultados con el término de búsqueda
+    mensajeNoResultados.textContent = `There are no matching results "${terminoBusqueda}".`;
+    mensajeNoResultados.style.display = 'block';
   }
-  
-  // Llama a la función y pasa el array de eventos
-  crearTarjetas(data.events);
-  
+}
+
+// Función para aplicar filtros y búsqueda
+function aplicarFiltros() {
+  const searchValue = document.getElementById("search-input").value.toLowerCase();
+  const selectedCategories = Array.from(document.querySelectorAll("#filtros-categorias input:checked"))
+    .map(input => input.value);
+
+  const eventosFiltrados = data.events.filter(evento => {
+    const matchesSearch = evento.name.toLowerCase().includes(searchValue) ||
+                          evento.description.toLowerCase().includes(searchValue);
+    const matchesCategory = selectedCategories.length === 0 || selectedCategories.includes(evento.category);
+    return matchesSearch && matchesCategory && new Date(evento.date) < new Date(data.currentDate);
+  });
+
+  crearTarjetas(eventosFiltrados, searchValue);
+}
+
+// Inicialización
+document.addEventListener("DOMContentLoaded", () => {
+  generarFiltrosCategorias();
+  crearTarjetas(data.events, "");  // Muestra todas las tarjetas inicialmente
+
+  // Manejar el cambio en el campo de búsqueda en tiempo real
+  document.getElementById("search-input").addEventListener("input", aplicarFiltros);
+
+  // Manejar el cambio en los filtros de categorías
+  document.getElementById("filtros-categorias").addEventListener("change", aplicarFiltros);
+});
