@@ -195,7 +195,7 @@ const data = {
     ]
   };
   
- // Generar checkboxes de categorías dinámicamente
+// Generar checkboxes de categorías dinámicamente
 function generarFiltrosCategorias() {
   const categoriasUnicas = [...new Set(data.events.map(evento => evento.category))];
   const contenedorFiltros = document.getElementById("filtros-categorias");
@@ -213,16 +213,15 @@ function generarFiltrosCategorias() {
 function crearTarjetas(eventos, terminoBusqueda) {
   let contenedor = document.getElementById("tarjetasDinamicas");
   const mensajeNoResultados = document.getElementById("mensaje-no-resultados");
-  let fechaCorte = new Date("2023-01-01");
+  let fechaCorte = new Date(data.currentDate);
 
   // Limpiar el contenedor solo si hay nuevos eventos para mostrar
   if (eventos.length > 0) {
-    const eventosExistentes = Array.from(contenedor.children).map(card => card.innerHTML);
     contenedor.innerHTML = '';  // Limpia el contenedor antes de añadir nuevas tarjetas
-    mensajeNoResultados.style.display = 'none';  // Oculta el mensaje de no resultados
+    mensajeNoResultados.classList.remove('mostrar');  // Oculta el mensaje de no resultados
     
     eventos.forEach(evento => {
-      if (new Date(evento.date) > fechaCorte) {
+      if (new Date(evento.date) >= fechaCorte) {
         let tarjeta = document.createElement('div');
         tarjeta.className = "col-12 col-md-6 col-lg-3 mb-4";
         tarjeta.innerHTML = `
@@ -240,15 +239,10 @@ function crearTarjetas(eventos, terminoBusqueda) {
         contenedor.appendChild(tarjeta);
       }
     });
-
-    // Si no se han añadido nuevas tarjetas, muestra el mensaje de no resultados
-    if (contenedor.innerHTML === eventosExistentes.join('')) {
-      mensajeNoResultados.style.display = 'block';
-    }
   } else {
-    // Si no hay eventos, muestra el mensaje de no resultados
+    // Si no hay eventos, muestra el mensaje de no resultados con el término de búsqueda
     mensajeNoResultados.textContent = `There are no matching results "${terminoBusqueda}".`;
-    mensajeNoResultados.style.display = 'block';
+    mensajeNoResultados.classList.add('mostrar');  // Muestra el mensaje de no resultados
   }
 }
 
@@ -262,7 +256,7 @@ function aplicarFiltros() {
     const matchesSearch = evento.name.toLowerCase().includes(searchValue) ||
                           evento.description.toLowerCase().includes(searchValue);
     const matchesCategory = selectedCategories.length === 0 || selectedCategories.includes(evento.category);
-    return matchesSearch && matchesCategory && new Date(evento.date) < new Date(data.currentDate);
+    return matchesSearch && matchesCategory && new Date(evento.date) >= new Date(data.currentDate);
   });
 
   crearTarjetas(eventosFiltrados, searchValue);
@@ -271,16 +265,10 @@ function aplicarFiltros() {
 // Inicialización
 document.addEventListener("DOMContentLoaded", () => {
   generarFiltrosCategorias();
-  crearTarjetas(data.events, "");
+  crearTarjetas(data.events.filter(evento => new Date(evento.date) >= new Date(data.currentDate)), "");  // Muestra solo eventos futuros inicialmente
 
   // Manejar el cambio en el campo de búsqueda en tiempo real
   document.getElementById("search-input").addEventListener("input", aplicarFiltros);
-
-  // Manejar el envío del formulario de búsqueda
-  document.getElementById("search-form").addEventListener("submit", (event) => {
-    event.preventDefault();
-    aplicarFiltros();
-  });
 
   // Manejar el cambio en los filtros de categorías
   document.getElementById("filtros-categorias").addEventListener("change", aplicarFiltros);

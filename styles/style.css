@@ -1,18 +1,30 @@
-
-body, html {
-    background-color: #DDE6ED;
-    overflow-x: hidden;
+html,
+body {
+    height: 100%;
     margin: 0;
     padding: 0;
-    height: 100%;
-  }
+    background-color: #DDE6ED;
+    overflow-x: hidden;
+}
+
+footer {
+    flex-shrink: 0;
+}
+
+#main-content {
+    display: flex;
+    flex-direction: column;
+
+    /* Ajusta este valor según la altura de tu header */
+    min-height: 45rem;
+    justify-content: center;
+    align-items: center;
+}
+
 .miMaim {
     padding-top: 7rem;
     /* Ajusta este valor según la altura de tu header */
     min-height: 45rem;
-}
-.miMaim2{
-    padding-top: 8%;
 }
 
 .sombra {
@@ -68,3 +80,16 @@ body, html {
 }
 
 
+.no-resultados {
+    display: none;
+    color: red;
+    /* Puedes personalizar esto como quieras */
+}
+
+.mostrar {
+    display: block;
+}
+
+.oculto {
+    display: none;
+}

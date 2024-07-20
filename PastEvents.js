@@ -1,5 +1,4 @@
-
-  const data = {
+const data = {
     currentDate: "2023-01-01",
     events: [
       {
@@ -219,7 +218,7 @@ function crearTarjetas(eventos, terminoBusqueda) {
   // Limpiar el contenedor solo si hay nuevos eventos para mostrar
   if (eventos.length > 0) {
     contenedor.innerHTML = '';  // Limpia el contenedor antes de añadir nuevas tarjetas
-    mensajeNoResultados.style.display = 'none';  // Oculta el mensaje de no resultados
+    mensajeNoResultados.classList.remove('mostrar');  // Oculta el mensaje de no resultados
     
     eventos.forEach(evento => {
       if (new Date(evento.date) < fechaCorte) {
@@ -243,7 +242,7 @@ function crearTarjetas(eventos, terminoBusqueda) {
   } else {
     // Si no hay eventos, muestra el mensaje de no resultados con el término de búsqueda
     mensajeNoResultados.textContent = `There are no matching results "${terminoBusqueda}".`;
-    mensajeNoResultados.style.display = 'block';
+    mensajeNoResultados.classList.add('mostrar');  // Muestra el mensaje de no resultados
   }
 }
 
