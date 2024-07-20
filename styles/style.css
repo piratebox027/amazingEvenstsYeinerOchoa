@@ -11,20 +11,12 @@ footer {
     flex-shrink: 0;
 }
 
-#main-content {
+.main-content {
     display: flex;
     flex-direction: column;
-
-    /* Ajusta este valor según la altura de tu header */
-    min-height: 45rem;
+    min-height: 50%;
     justify-content: center;
     align-items: center;
-}
-
-.miMaim {
-    padding-top: 7rem;
-    /* Ajusta este valor según la altura de tu header */
-    min-height: 45rem;
 }
 
 .sombra {
