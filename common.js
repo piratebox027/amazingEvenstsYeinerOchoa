@@ -4,6 +4,8 @@ export function generarFiltrosCategorias(data) {
   const categoriasUnicas = [...new Set(data.events.map(evento => evento.category))];
   const contenedorFiltros = document.getElementById("filtros-categorias");
 
+  contenedorFiltros.innerHTML = ''; // Limpia el contenedor antes de añadir nuevos filtros
+
   categoriasUnicas.forEach(categoria => {
     const label = document.createElement('label');
     label.className = "form-check-label";
@@ -18,10 +20,10 @@ export function crearTarjetas(eventos, terminoBusqueda, currentDate, filtroFecha
   let contenedor = document.getElementById("tarjetasDinamicas");
   const mensajeNoResultados = document.getElementById("mensaje-no-resultados");
 
-  contenedor.innerHTML = '';  // Limpia el contenedor antes de añadir nuevas tarjetas
+  contenedor.innerHTML = ''; // Limpia el contenedor antes de añadir nuevas tarjetas
 
   if (eventos.length > 0) {
-    mensajeNoResultados.classList.remove('mostrar');  // Oculta el mensaje de no resultados
+    mensajeNoResultados.classList.remove('mostrar'); // Oculta el mensaje de no resultados
     eventos.forEach(evento => {
       if (filtroFecha(evento, currentDate)) {
         let tarjeta = document.createElement('div');
@@ -42,6 +44,7 @@ export function crearTarjetas(eventos, terminoBusqueda, currentDate, filtroFecha
       }
     });
   } else {
+    mensajeNoResultados.classList.add('mostrar'); // Muestra el mensaje de no resultados
     mensajeNoResultados.innerHTML = `
       <h3>No hay publicaciones que coincidan con tu búsqueda.</h3>
       <ul>
@@ -50,7 +53,6 @@ export function crearTarjetas(eventos, terminoBusqueda, currentDate, filtroFecha
         <li>Navega por las categorías para encontrar un producto similar.</li>
       </ul>
     `;
-    mensajeNoResultados.classList.add('mostrar');  // Muestra el mensaje de no resultados
   }
 }
 
